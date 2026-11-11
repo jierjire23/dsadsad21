@@ -1,0 +1,11 @@
+services:
+  eldorado-monitor:
+    build: .
+    container_name: eldorado-monitor
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./state.json:/app/state.json
